@@ -8,20 +8,21 @@
 
 // The names and URLs to all of the feeds we'd like available.
 var allFeeds = [
-    {
-        name: 'Udacity Blog',
-        url: 'http://blog.udacity.com/feed'
-    }, {
-        name: 'CSS Tricks',
-        url: 'http://feeds.feedburner.com/CssTricks'
-    }, {
-        name: 'HTML5 Rocks',
-        url: 'http://feeds.feedburner.com/html5rocks'
-    }, {
-        name: 'Linear Digressions',
-        url: 'http://feeds.feedburner.com/udacity-linear-digressions'
-    }
-];
+        {
+            name: 'Udacity Blog',
+            url: 'http://blog.udacity.com/feed'
+        }, {
+            name: 'CSS Tricks',
+            url: 'http://feeds.feedburner.com/CssTricks'
+        }, {
+            name: 'HTML5 Rocks',
+            url: 'http://feeds.feedburner.com/html5rocks'
+        }, {
+            name: 'Linear Digressions',
+            url: 'http://feeds.feedburner.com/udacity-linear-digressions'
+        }
+    ],
+    menuIcon = $('.menu-icon-link');
 
 /* This function starts up our application. The Google Feed
  * Reader API is loaded asynchonously and will then call this
@@ -96,8 +97,7 @@ $(function() {
     var container = $('.feed'),
         feedList = $('.feed-list'),
         feedItemTemplate = Handlebars.compile($('.tpl-feed-list-item').html()),
-        feedId = 0,
-        menuIcon = $('.menu-icon-link');
+        feedId = 0;
 
     /* Loop through all of our feeds, assigning an id property to
      * each of the feeds based upon its index within the array.
@@ -129,5 +129,6 @@ $(function() {
      */
     menuIcon.on('click', function() {
         $('body').toggleClass('menu-hidden');
+        console.log("location", $('.menu-hidden').is(':visible'));
     });
 }());
