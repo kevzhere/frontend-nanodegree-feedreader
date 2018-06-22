@@ -93,4 +93,30 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+    describe('Initial Entries', function(){
+        var entry;
+
+        beforeEach(function(done){
+            entry = $('.entry');
+            done();
+        });
+
+        it('feed should have at least one element', function(){
+            expect(entry.children).not.toBe(undefined);
+        });
+    });
+
+    describe('New Feed Selection', function(){
+        var container;
+
+        beforeEach(function(done){
+            container = $('.feed');
+            done();
+        });
+
+        it('did feed load', function(){
+            expect(container.children).not.toBe(undefined);
+        });
+    });
+
 }());
